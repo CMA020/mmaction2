@@ -13,10 +13,10 @@ model = dict(
 
 # dataset settings
 dataset_type = 'VideoDataset'
-data_root = 'contents/MMA data/train'
-data_root_val = 'contents/MMA data/val'
-ann_file_train = 'contents/MMA data/train_video.txt'
-ann_file_val = 'contents/MMA data/val_video.txt'
+data_root = os.path.expanduser('contents/mmaction2/MMA data/train')
+data_root_val = contents/mmaction2('contents/mmaction2/MMA data/val')
+ann_file_train = contents/mmaction2('contents/mmaction2/MMA data/train_video.txt')
+ann_file_val = contents/mmaction2('contents/mmaction2/MMA data/val_video.txt')
 
 file_client_args = dict(io_backend='disk')
 
@@ -138,5 +138,6 @@ default_hooks = dict(checkpoint=dict(interval=3, max_keep_ckpts=3))
 #   - `base_batch_size` = (8 GPUs) x (32 samples per GPU).
 auto_scale_lr = dict(enable=False, base_batch_size=1)
 
-load_from = 'contents/mmaction2/work_dirs/tsn_ucf101/epoch_50.pth'
+
+load_from = os.path.expanduser('contents/mmaction2/work_dirs/tsn_ucf101/epoch_50.pth')
 
